@@ -1,0 +1,338 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Roboto", sans-serif;
+    background: linear-gradient(135deg, #000428, #004e92);
+    background-size: 400% 400%;
+    color: #fff;
+    animation: bgShift 10s ease infinite;
+    overflow-x: hidden;
+  }
+  
+  /* 🔵 Arka plan hareketi */
+  @keyframes bgShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* HEADER */
+  .glow-header {
+    text-align: center;
+    padding: 60px 20px 30px;
+    animation: fadeDown 1.5s ease;
+  }
+  
+  .glow-header h1 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 2.8em;
+    color: #ffffff;
+    text-shadow: 0 0 20px #00ffff, 0 0 40px #0077ff;
+    letter-spacing: 2px;
+  }
+  
+  .glow-header p {
+    color: #c8e9ff;
+    margin-top: 8px;
+  }
+  
+  /* NAVBAR */
+  .navbar {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: slideDown 1.3s ease;
+  }
+  
+  .glass-nav {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(77, 195, 255, 0.3);
+  }
+  
+  .navbar ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+    padding: 15px 0;
+  }
+  
+  .navbar a {
+    color: #b8e3ff;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #00ffff;
+    transition: width 0.3s ease;
+  }
+  
+  .navbar a:hover {
+    color: #fff;
+  }
+  
+  .navbar a:hover::after {
+    width: 100%;
+  }
+  
+  .navbar a.active {
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .navbar a.active::after {
+    width: 100%;
+  }
+  
+  /* SECTIONS */
+  main {
+    width: 90%;
+    max-width: 950px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+  }
+  
+  section {
+    padding: 50px 0;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+  }
+  
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .fade-section h2 {
+    color: #ffffff;
+    border-left: 4px solid #4dc3ff;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    font-size: 2em;
+  }
+  
+  section p {
+    line-height: 1.7em;
+    font-size: 1.1em;
+    color: #e0f4ff;
+  }
+  
+  /* SLIDE EFFECTS */
+  .slide-left { transform: translateX(-40px); }
+  .slide-right { transform: translateX(40px); }
+  .zoom-in { transform: scale(0.9); }
+  
+  section.visible.slide-left,
+  section.visible.slide-right,
+  section.visible.zoom-in {
+    transform: none;
+  }
+  
+  /* SERVICES */
+  .service-list li {
+    margin: 12px 0;
+    padding: 12px 18px;
+    background: rgba(0, 80, 150, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 0 5px #004b80;
+    transition: all 0.3s ease;
+  }
+  
+  .service-list li:hover {
+    transform: translateX(10px);
+    background: rgba(77, 195, 255, 0.3);
+    box-shadow: 0 0 15px #4dc3ff;
+  }
+  
+  /* FOOTER */
+  .glass-footer {
+    background: rgba(0, 0, 20, 0.4);
+    backdrop-filter: blur(8px);
+    text-align: center;
+    padding: 40px 0px;
+    border-top: 1px solid #4dc3ff;
+    animation: fadeUp 1.5s ease;
+  }
+  
+  .glass-footer a {
+    color: #a0c8ff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .glass-footer a:hover {
+    color: #fff;
+  }
+  
+  .insta-icon {
+    width: 55px;
+    height: 55px;
+    margin-top: 15px;
+    transition: transform 0.4s ease;
+  }
+  
+  .insta-icon:hover {
+    transform: rotate(10deg) scale(1.2);
+  }
+  
+  /* ANİMASYONLAR */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+
+  /* GÖRSELLER */
+.section-img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 25px 0;
+    display: block;
+    box-shadow: 0 0 25px rgba(0, 150, 255, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  
+
+  
+  /* 📱 RESPONSIVE TASARIMLAR */
+  
+  /* Tablet (max 900px) */
+  @media (max-width: 900px) {
+    main {
+      width: 95%;
+    }
+  
+    .navbar ul {
+      gap: 25px;
+    }
+  
+    .glow-header h1 {
+      font-size: 2.3em;
+    }
+  
+    .fade-section h2 {
+      font-size: 1.6em;
+    }
+  
+    section p {
+      font-size: 1em;
+    }
+  
+    .section-img {
+      max-height: 300px;
+    }
+  }
+  
+  /* Mobil (max 650px) */
+  @media (max-width: 650px) {
+    body {
+      font-size: 15px;
+    }
+  
+    .navbar ul {
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .navbar a {
+      font-size: 0.9em;
+    }
+  
+    .glow-header {
+      padding: 40px 10px 20px;
+    }
+  
+    .glow-header h1 {
+      font-size: 1.8em;
+      line-height: 1.2em;
+    }
+  
+    .glow-header p {
+      font-size: 0.9em;
+    }
+  
+    .fade-section h2 {
+      font-size: 1.3em;
+    }
+  
+    section {
+      padding: 35px 0;
+    }
+  
+    .service-list li {
+      font-size: 0.9em;
+      padding: 10px 12px;
+    }
+  
+    .section-img {
+      max-height: 230px;
+      border-radius: 10px;
+    }
+  
+    .glass-footer {
+      padding: 25px 10px;
+      font-size: 0.9em;
+    }
+  
+    .insta-icon {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  /* Küçük Telefonlar (max 400px) */
+  @media (max-width: 400px) {
+    .navbar ul {
+      gap: 10px;
+    }
+  
+    .navbar a {
+      font-size: 0.8em;
+    }
+  
+    .glow-header h1 {
+      font-size: 1.5em;
+    }
+  
+    .fade-section h2 {
+      font-size: 1.1em;
+    }
+  
+    section p {
+      font-size: 0.9em;
+    }
+  
+    .section-img {
+      max-height: 200px;
+    }
+  }
+  
